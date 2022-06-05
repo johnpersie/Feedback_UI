@@ -34,6 +34,11 @@ export const GlobalStyles = createGlobalStyle`
   padding: 0;
 }
 
+html {
+    /* font-size: 62.5%; */
+    scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--body-color);
   font-family: 'Poppins', sans-serif;
