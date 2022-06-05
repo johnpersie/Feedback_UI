@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { CardContainer, NumDisplay, TextDisplay } from "./feedbackItemStyled";
 
-function FeedbackItem() {
-  const [rating, setRating] = useState(8);
-  const [text, setText] = useState("here is an example of a feedback item");
+function FeedbackItem({ item }) {
   return (
     <CardContainer>
-      <NumDisplay>{rating}</NumDisplay>
-      <TextDisplay>{text}</TextDisplay>
+      <NumDisplay>{item.rating}</NumDisplay>
+      <TextDisplay>{item.text}</TextDisplay>
     </CardContainer>
   );
 }
