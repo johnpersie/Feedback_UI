@@ -1,12 +1,17 @@
-import { useState } from "react";
-import { CardContainer, NumDisplay, TextDisplay } from "./feedbackItemStyled";
+import { FaTimes } from "react-icons/fa";
+import Card from "../../reuseable/Card";
 
-function FeedbackItem({ item }) {
+import { Button, NumDisplay, TextDisplay } from "./feedbackItemStyled";
+
+function FeedbackItem({ item, handleDelete }) {
   return (
-    <CardContainer>
+    <Card reverse={false}>
       <NumDisplay>{item.rating}</NumDisplay>
+      <Button onClick={() => handleDelete(item.id)}>
+        <FaTimes color="red" />
+      </Button>
       <TextDisplay>{item.text}</TextDisplay>
-    </CardContainer>
+    </Card>
   );
 }
 

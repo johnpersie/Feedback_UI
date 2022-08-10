@@ -28,3 +28,11 @@ export const TextDisplay = styled.div`
   display: flex;
   justify-content: center;
 `;
+export const Button = styled.button`
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+`;
