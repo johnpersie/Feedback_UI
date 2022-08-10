@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import { Container, GlobalStyles } from "./styles/Global";
 import FeedbackList from "./components/feedbackList";
 import FeedbackData from "./Data/feedbackData";
+import FeedbackStats from "./components/FeedbackStats";
 
 const theme = {
   color: {
@@ -42,6 +43,7 @@ function App() {
       <GlobalStyles />
       <Header />
       <Container>
+        <FeedbackStats feedback={feedback} />
         <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
       </Container>
     </Fragment>

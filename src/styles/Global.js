@@ -28,5 +28,4 @@ export const Container = styled.div`
   max-width: 120rem;
   width: 50%;
   margin: 6rem auto;
-  text-align: center;
 `;
