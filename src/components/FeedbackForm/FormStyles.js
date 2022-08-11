@@ -1,9 +1,10 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const FormContainer = styled.form`
   width: 100%;
   text-align: center;
-
+  transition: transform 0.2s ease;
   h2 {
     font-size: clamp(2rem, 5vw, 2.5rem);
   }
@@ -33,8 +34,10 @@ export const Input = styled.input`
     cursor: pointer;
   }
 `;
-export const Div = styled.div`
+export const Div = styled(motion.div)`
   padding-top: 10px;
   text-align: center;
   color: rebeccapurple;
+  transition: 0.5s ease;
+  color: #b3afac;
 `;

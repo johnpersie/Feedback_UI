@@ -31,6 +31,8 @@ body {
 ul {
   list-style: none;
 }
+
+
 `;
 export const Container = styled.div`
   max-width: 120rem;
@@ -39,6 +41,14 @@ export const Container = styled.div`
   background-color: #151a1e;
   border-radius: 2rem;
   padding: 2rem 2rem;
+
+  p {
+    display: inline-block;
+    font-size: clamp(1.6rem, 5vw, 1.8rem);
+    color: #e1e4e6;
+    margin-left: 4rem;
+    padding: 2rem 0;
+  }
 
   @media screen and (max-width: 960px) {
     width: 90%;

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { List, Ul } from "./RatingSelectStyles";
 
 const RatingSelect = ({ select }) => {
-  const [selected, setSelected] = useState(10);
+  const [selected, setSelected] = useState();
 
   const handleChange = (e) => {
     setSelected(+e.currentTarget.value);

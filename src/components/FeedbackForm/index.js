@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "../../reuseable/Button";
+import { AnimatePresence } from "framer-motion";
 import Card from "../../reuseable/Card";
 import RatingSelect from "../RatingSelect";
 import { Div, FormContainer, Input, InputGroup } from "./FormStyles";
@@ -8,7 +9,7 @@ const FeedbackForm = ({ handleAdd }) => {
   const [text, setText] = useState("");
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
-  const [message, setMessage] = useState("hello");
+  const [message, setMessage] = useState("");
 
   const handleTextChange = (e) => {
     if (text === "") {
@@ -52,7 +53,17 @@ const FeedbackForm = ({ handleAdd }) => {
             send
           </Button>
         </InputGroup>
-        {message && <Div>{message}</Div>}
+        {message && (
+          <AnimatePresence>
+            <Div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              {message}
+            </Div>
+          </AnimatePresence>
+        )}
       </FormContainer>
     </Card>
   );

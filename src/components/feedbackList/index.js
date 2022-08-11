@@ -3,7 +3,7 @@ import FeedbackItem from "../FeedbackItem";
 
 function FeedbackList({ feedback, handleDelete }) {
   if (!feedback || feedback.length === 0) {
-    return <p>no feed back yet</p>;
+    return <p>No feed back yet</p>;
   }
 
   return (
@@ -26,13 +26,6 @@ function FeedbackList({ feedback, handleDelete }) {
       </AnimatePresence>
     </div>
   );
-  // return (
-  //   <div>
-  //     {feedback.map((item) => (
-  //       <FeedbackItem key={item.id} item={item} handleDelete={handleDelete} />
-  //     ))}
-  //   </div>
-  // );
 }
 
 export default FeedbackList;
