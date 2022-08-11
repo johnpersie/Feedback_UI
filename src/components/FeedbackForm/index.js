@@ -4,7 +4,7 @@ import Card from "../../reuseable/Card";
 import RatingSelect from "../RatingSelect";
 import { Div, FormContainer, InputGroup } from "./FormStyles";
 
-const Form = () => {
+const FeedbackForm = ({ handleAdd }) => {
   const [text, setText] = useState("");
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
@@ -23,11 +23,23 @@ const Form = () => {
     }
     setText(e.target.value);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (text.trim().length > 10) {
+      const newFeedback = {
+        text,
+        rating,
+      };
+      handleAdd(newFeedback);
+
+      setText("");
+    }
+  };
   return (
     <Card>
-      <FormContainer>
+      <FormContainer onSubmit={handleSubmit}>
         <h2> How will you rate your services with us?</h2>
-
         <RatingSelect select={(rating) => setRating(rating)} />
         <InputGroup>
           <input
@@ -46,4 +58,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default FeedbackForm;

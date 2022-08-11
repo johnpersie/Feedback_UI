@@ -1,11 +1,11 @@
 import { Fragment, useState } from "react";
-// import FeedbackItem from "./components/FeedbackItem";
+import { v4 as uuidv4 } from "uuid";
 import Header from "./components/Header";
 import { Container, GlobalStyles, Wrapper } from "./styles/Global";
 import FeedbackList from "./components/feedbackList";
 import FeedbackData from "./Data/feedbackData";
 import FeedbackStats from "./components/FeedbackStats";
-import Form from "./components/Form";
+import FeedbackForm from "./components/FeedbackForm";
 
 const theme = {
   color: {
@@ -33,6 +33,10 @@ const theme = {
 
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
+  const addNewFeedback = (newFeedback) => {
+    newFeedback.id = uuidv4();
+    setFeedback([newFeedback, ...feedback]);
+  };
 
   const deleteFeedback = (id) => {
     if (window.confirm("Are you sure you want to delete?")) {
@@ -45,7 +49,7 @@ function App() {
       <Container>
         <Header />
         <Wrapper>
-          <Form />
+          <FeedbackForm handleAdd={addNewFeedback} />
           <FeedbackStats feedback={feedback} />
           <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
         </Wrapper>
