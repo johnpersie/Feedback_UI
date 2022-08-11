@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "../../reuseable/Button";
 import Card from "../../reuseable/Card";
 import RatingSelect from "../RatingSelect";
-import { Div, FormContainer, InputGroup } from "./FormStyles";
+import { Div, FormContainer, Input, InputGroup } from "./FormStyles";
 
 const FeedbackForm = ({ handleAdd }) => {
   const [text, setText] = useState("");
@@ -42,13 +42,13 @@ const FeedbackForm = ({ handleAdd }) => {
         <h2> How will you rate your services with us?</h2>
         <RatingSelect select={(rating) => setRating(rating)} />
         <InputGroup>
-          <input
+          <Input
             onChange={handleTextChange}
             type="text"
             placeholder="write your review"
             value={text}
           />
-          <Button type="submit" isdisabled={btnDisabled} version="secondary">
+          <Button type="submit" isdisabled={btnDisabled} version="">
             send
           </Button>
         </InputGroup>

@@ -1,14 +1,17 @@
 import styled from "styled-components";
-import { Container } from "../../styles/Global";
 
-export const HeaderContainer = styled(Container)`
+export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
 `;
 export const Wrapper = styled.div`
-  max-width: 768px;
   margin: auto;
-  padding: 0 20px;
+  padding: 3rem 0 1rem 0;
+
+  h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: #f8f8f6;
+  }
 `;

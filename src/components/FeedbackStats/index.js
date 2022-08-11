@@ -1,5 +1,5 @@
 import React from "react";
-import { StatsContainer } from "./FeedbackStatsStyles";
+import { Rating, Review, StatsContainer } from "./FeedbackStatsStyles";
 
 const FeedbackStats = ({ feedback }) => {
   // Methold to Calculate ratings average
@@ -12,8 +12,8 @@ const FeedbackStats = ({ feedback }) => {
   average = average.toFixed(1).replace(/[.,]0$/, "");
   return (
     <StatsContainer>
-      <h4>{feedback.length} Reviews</h4>
-      <h4>Average rating: {isNaN(average) ? 0 : average}</h4>
+      <Review>{feedback.length} Reviews</Review>
+      <Rating>Average rating: {isNaN(average) ? 0 : average}</Rating>
     </StatsContainer>
   );
 };

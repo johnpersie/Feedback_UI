@@ -11,15 +11,26 @@ export const FormContainer = styled.form`
 export const InputGroup = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   border: 1px solid #ccc;
-  padding: 0.8rem 1rem;
+  padding: 1rem 1rem;
+  margin: 1rem 0;
   border-radius: 0.8rem;
-
-  input {
-    flex-grow: 2;
-    border: none;
-    font-size: 1.6rem;
-    outline: none;
+`;
+export const Input = styled.input`
+  background: transparent;
+  outline: none;
+  border: none;
+  color: #e1e4e6;
+  font-size: clamp(1.4rem, 5vw, 1.6rem);
+  .btn {
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
   }
 `;
 export const Div = styled.div`

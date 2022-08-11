@@ -1,14 +1,5 @@
 import styled from "styled-components";
 
-export const CardContainer = styled.div`
-  background-color: #fff;
-  color: #333;
-  border-radius: 15px;
-  padding: 3rem 4rem;
-  margin: 2rem 0;
-  position: relative;
-`;
-
 export const NumDisplay = styled.div`
   position: absolute;
   top: -1rem;
@@ -20,13 +11,22 @@ export const NumDisplay = styled.div`
   padding: 10px;
   text-align: center;
   border-radius: 50%;
-  font-size: 19px;
+  font-size: 1.9rem;
   border: 1px #eee solid;
   transition: 0.3s;
+
+  @media screen and (max-width: 450px) {
+    font-size: 1.6rem;
+    top: -1rem;
+    left: -0.5rem;
+    width: 4rem;
+    height: 4rem;
+  }
 `;
 export const TextDisplay = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 export const Button = styled.button`
   position: absolute;

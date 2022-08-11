@@ -48,11 +48,11 @@ function App() {
       <GlobalStyles />
       <Container>
         <Header />
-        <Wrapper>
-          <FeedbackForm handleAdd={addNewFeedback} />
-          <FeedbackStats feedback={feedback} />
-          <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
-        </Wrapper>
+        {/* <Wrapper> */}
+        <FeedbackForm handleAdd={addNewFeedback} />
+        <FeedbackStats feedback={feedback} />
+        <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
+        {/* </Wrapper> */}
       </Container>
     </Fragment>
   );

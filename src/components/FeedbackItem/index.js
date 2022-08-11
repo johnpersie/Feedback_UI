@@ -5,7 +5,7 @@ import { Button, NumDisplay, TextDisplay } from "./feedbackItemStyled";
 
 function FeedbackItem({ item, handleDelete }) {
   return (
-    <Card reverse={false}>
+    <Card>
       <NumDisplay>{item.rating}</NumDisplay>
       <Button onClick={() => handleDelete(item.id)}>
         <FaTimes color="red" />

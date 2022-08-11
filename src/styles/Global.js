@@ -14,10 +14,18 @@ html {
 }
 
 body {
-  background-color: #999;
+  background-image: url("../frontend.jpg");
+  background: #070b0d;
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
-font-size: 1.6rem;
+  font-size: 1.6rem;
+  background-attachment: fixed;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow: auto;
+  width: 100vw;
 }
 
 ul {
@@ -26,22 +34,29 @@ ul {
 `;
 export const Container = styled.div`
   max-width: 120rem;
-  width: 70%;
-  margin: auto;
+  width: 50%;
+  margin: 6rem auto;
+  background-color: #151a1e;
+  border-radius: 2rem;
+  padding: 2rem 2rem;
 
   @media screen and (max-width: 960px) {
     width: 90%;
   }
+  @media screen and (max-width: 450px) {
+    width: 96%;
+    padding: 0;
+  }
 `;
-export const Wrapper = styled.div`
-  max-width: 120rem;
-  width: 60%;
-  margin: 6rem auto;
+// export const Wrapper = styled.div`
+//   max-width: 120rem;
+//   width: 70%;
+//   margin: auto;
 
-  @media screen and (max-width: 960px) {
-    width: 80%;
-  }
-  @media screen and (max-width: 600px) {
-    width: 100%;
-  }
-`;
+//   @media screen and (max-width: 960px) {
+//     width: 80%;
+//   }
+//   @media screen and (max-width: 600px) {
+//     width: 100%;
+//   }
+// `;
