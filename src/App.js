@@ -1,10 +1,11 @@
 import { Fragment, useState } from "react";
 // import FeedbackItem from "./components/FeedbackItem";
 import Header from "./components/Header";
-import { Container, GlobalStyles } from "./styles/Global";
+import { Container, GlobalStyles, Wrapper } from "./styles/Global";
 import FeedbackList from "./components/feedbackList";
 import FeedbackData from "./Data/feedbackData";
 import FeedbackStats from "./components/FeedbackStats";
+import Form from "./components/Form";
 
 const theme = {
   color: {
@@ -41,10 +42,13 @@ function App() {
   return (
     <Fragment>
       <GlobalStyles />
-      <Header />
       <Container>
-        <FeedbackStats feedback={feedback} />
-        <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
+        <Header />
+        <Wrapper>
+          <Form />
+          <FeedbackStats feedback={feedback} />
+          <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
+        </Wrapper>
       </Container>
     </Fragment>
   );

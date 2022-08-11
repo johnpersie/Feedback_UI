@@ -26,6 +26,22 @@ ul {
 `;
 export const Container = styled.div`
   max-width: 120rem;
-  width: 50%;
+  width: 70%;
+  margin: auto;
+
+  @media screen and (max-width: 960px) {
+    width: 90%;
+  }
+`;
+export const Wrapper = styled.div`
+  max-width: 120rem;
+  width: 60%;
   margin: 6rem auto;
+
+  @media screen and (max-width: 960px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 `;
