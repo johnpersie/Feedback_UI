@@ -1,13 +1,18 @@
 import { motion, AnimatePresence } from "framer-motion";
 import FeedbackItem from "../FeedbackItem";
+import { Container, FeedbackListContainer, Para } from "./feedbackListStyled";
 
 function FeedbackList({ feedback, handleDelete }) {
   if (!feedback || feedback.length === 0) {
-    return <p>No feed back yet</p>;
+    return (
+      <Container>
+        <Para>No feed back yet</Para>
+      </Container>
+    );
   }
 
   return (
-    <div>
+    <FeedbackListContainer>
       <AnimatePresence>
         {feedback.map((item) => (
           <motion.div
@@ -24,7 +29,7 @@ function FeedbackList({ feedback, handleDelete }) {
           </motion.div>
         ))}
       </AnimatePresence>
-    </div>
+    </FeedbackListContainer>
   );
 }
 

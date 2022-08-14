@@ -6,6 +6,7 @@ import FeedbackList from "./components/feedbackList";
 import FeedbackData from "./Data/feedbackData";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
+import { FeedbackProvider } from "./components/Context/Context";
 
 const theme = {
   color: {
@@ -44,17 +45,19 @@ function App() {
     setFeedback(feedback.filter((list) => list.id !== id));
   };
   return (
-    <Fragment>
-      <GlobalStyles />
-      <Container>
-        <Header />
-        {/* <Wrapper> */}
-        <FeedbackForm handleAdd={addNewFeedback} />
-        <FeedbackStats feedback={feedback} />
-        <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
-        {/* </Wrapper> */}
-      </Container>
-    </Fragment>
+    <FeedbackProvider>
+      <Fragment>
+        <GlobalStyles />
+        <Container>
+          <Header />
+          {/* <Wrapper> */}
+          <FeedbackForm handleAdd={addNewFeedback} />
+          <FeedbackStats feedback={feedback} />
+          <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
+          {/* </Wrapper> */}
+        </Container>
+      </Fragment>
+    </FeedbackProvider>
   );
 }
 export default App;
