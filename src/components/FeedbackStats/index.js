@@ -1,7 +1,10 @@
 import React from "react";
+import { useContext } from "react";
+import FeedbackContext from "../Context/Context";
 import { Rating, Review, StatsContainer } from "./FeedbackStatsStyles";
 
-const FeedbackStats = ({ feedback }) => {
+const FeedbackStats = () => {
+  const { feedback } = useContext(FeedbackContext);
   // Methold to Calculate ratings average
   let average =
     feedback.reduce((acc, cur) => {

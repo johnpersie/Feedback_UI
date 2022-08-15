@@ -25,7 +25,7 @@ export const NumDisplay = styled.div`
 `;
 export const TextDisplay = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 `;
 export const Button = styled.button`

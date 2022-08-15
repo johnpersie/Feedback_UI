@@ -7,7 +7,6 @@ export const HeaderContainer = styled.div`
 `;
 export const Wrapper = styled.div`
   margin: auto;
-  padding: 3rem 0 1rem 0;
 
   h2 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);

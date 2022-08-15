@@ -38,7 +38,7 @@ ul {
 export const Container = styled.div`
   max-width: 120rem;
   width: 50%;
-  margin: 6rem auto;
+  margin: 4rem auto;
   background-color: #151a1e;
   border-radius: 2rem;
   padding: 2rem 2rem;

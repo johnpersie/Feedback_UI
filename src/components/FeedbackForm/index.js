@@ -4,8 +4,11 @@ import { AnimatePresence } from "framer-motion";
 import Card from "../../reuseable/Card";
 import RatingSelect from "../RatingSelect";
 import { Div, FormContainer, Input, InputGroup } from "./FormStyles";
+import { useContext } from "react";
+import FeedbackContext from "../Context/Context";
 
-const FeedbackForm = ({ handleAdd }) => {
+const FeedbackForm = () => {
+  const { addNewFeedback } = useContext(FeedbackContext);
   const [text, setText] = useState("");
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
@@ -32,7 +35,7 @@ const FeedbackForm = ({ handleAdd }) => {
         text,
         rating,
       };
-      handleAdd(newFeedback);
+      addNewFeedback(newFeedback);
 
       setText("");
     }
