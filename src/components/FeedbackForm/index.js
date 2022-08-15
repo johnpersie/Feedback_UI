@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../../reuseable/Button";
 import { AnimatePresence } from "framer-motion";
 import Card from "../../reuseable/Card";
@@ -8,11 +8,21 @@ import { useContext } from "react";
 import FeedbackContext from "../Context/Context";
 
 const FeedbackForm = () => {
-  const { addNewFeedback } = useContext(FeedbackContext);
+  const { addNewFeedback, feedbackEdit } = useContext(FeedbackContext);
   const [text, setText] = useState("");
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
+
+  // this function active the rating and text for editing
+
+  useEffect(() => {
+    if (feedbackEdit.edit === true) {
+      setBtnDisabled(false);
+      setText(feedbackEdit.item.text);
+      setRating(feedbackEdit.item.rating);
+    }
+  }, [feedbackEdit]);
 
   const handleTextChange = (e) => {
     if (text === "") {
