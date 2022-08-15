@@ -31,7 +31,7 @@ export const TextDisplay = styled.div`
 export const Button = styled.button`
   position: absolute;
   top: 15px;
-  right: 20px;
+  right: ${({ right }) => right || "2rem"};
   cursor: pointer;
   background: none;
   border: none;
