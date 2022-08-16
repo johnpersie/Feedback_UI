@@ -20,6 +20,7 @@ export const InputGroup = styled.div`
 `;
 export const Input = styled.input`
   background: transparent;
+  width: 100%;
   outline: none;
   border: none;
   color: #e1e4e6;

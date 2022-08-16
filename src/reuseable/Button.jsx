@@ -3,7 +3,7 @@ const ButtonStyle = styled.button`
   border: 0;
   border-radius: 8px;
   color: #fff;
-  width: 20%;
+  padding: 0 2rem;
   font-size: 1.6rem;
   height: 40px;
   background-color: #202142;

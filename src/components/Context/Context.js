@@ -11,16 +11,24 @@ export const FeedbackProvider = ({ children }) => {
       rating: 10,
     },
     {
-      id: 1,
+      id: 2,
       text: "This for context test",
       rating: 7,
     },
     {
-      id: 1,
+      id: 3,
       text: "This is a test sample",
       rating: 9,
     },
   ]);
+  //function to update item
+  const updateFeedback = (id, updatedItem) => {
+    setFeedback(
+      feedback.flatMap((item) =>
+        item.id === id ? { ...item, ...updatedItem } : item
+      )
+    );
+  };
 
   const [feedbackEdit, setFeedbackEdit] = useState({
     item: {},
@@ -54,6 +62,7 @@ export const FeedbackProvider = ({ children }) => {
         addNewFeedback,
         editFeedback,
         feedbackEdit,
+        updateFeedback,
       }}
     >
       {children}

@@ -8,7 +8,8 @@ import { useContext } from "react";
 import FeedbackContext from "../Context/Context";
 
 const FeedbackForm = () => {
-  const { addNewFeedback, feedbackEdit } = useContext(FeedbackContext);
+  const { addNewFeedback, feedbackEdit, updateFeedback } =
+    useContext(FeedbackContext);
   const [text, setText] = useState("");
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
@@ -45,7 +46,12 @@ const FeedbackForm = () => {
         text,
         rating,
       };
-      addNewFeedback(newFeedback);
+
+      if (feedbackEdit.edit === true) {
+        updateFeedback(feedbackEdit.item.id, newFeedback);
+      } else {
+        addNewFeedback(newFeedback);
+      }
 
       setText("");
     }

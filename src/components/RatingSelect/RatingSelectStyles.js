@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { NumDisplay } from "../FeedbackItem/feedbackItemStyled";
 
 export const Ul = styled.ul`
   display: flex;
